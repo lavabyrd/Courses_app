@@ -8,6 +8,8 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
     steps:
+      - add_ssh_keys: 
+          fingerprints: 9c:8b:15:f2:a1:1d:ff:89:ac:c3:dd:49:09:44:f8:d8
       - checkout
       - run: dotnet restore
       - run: dotnet build
