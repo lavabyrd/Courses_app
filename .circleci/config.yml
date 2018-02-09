@@ -11,4 +11,5 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-      - run: echo hello
+      - store_artifacts:
+          path: /temp/bin/Debug/netcoreapp2.0/Courses_app.dll
