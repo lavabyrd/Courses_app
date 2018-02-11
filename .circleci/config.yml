@@ -7,9 +7,10 @@ jobs:
     environment:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
-      USER_ID: $USER1
+      USER_ID: "splintor"
     steps:
       - checkout
+      - run: echo $USER_ID
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet publish -c Release --output ./published
