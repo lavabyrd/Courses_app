@@ -13,7 +13,7 @@ jobs:
       - run: dotnet build
       - run: dotnet publish -c Release --output ./published
       - run: ssh -o "StrictHostKeyChecking no" circle@178.62.60.163 -y rm -rf /app
-      - run: scp -r ./published $USER_ID@178.62.60.163:/home/circle/app 
-      - run: ssh circle@178.62.60.163 sudo systemctl restart dotnet-core-app.service
-      - store_artifacts:
-          path: /temp/bin/Debug/netcoreapp2.0/Courses_app.dll
+      - run: scp -i ~/.ssh/id_rsa_deploy -r ./published circle@178.62.60.163:/home/circle/app
+      - run: ssh -o "StrictHostKeyChecking no" circle@178.62.60.163 sudo systemctl restart dotnet-core-app.service
+      # - store_artifacts:
+      #     path: /temp/bin/Debug/netcoreapp2.0/Courses_app.dll
