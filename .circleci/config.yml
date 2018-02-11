@@ -1,5 +1,8 @@
 version: 2
 jobs:
+  machine:
+    environment:
+      USER_ID: ${USER1}
   build:
     working_directory: /temp
     docker:
@@ -7,7 +10,7 @@ jobs:
     environment:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
-      USER_ID: ${USER1}
+      # USER_ID: ${USER1}
       STEPS: "ssh $USER_ID@178.62.60.163 -y rm -rf /app"
     steps:
       - checkout
