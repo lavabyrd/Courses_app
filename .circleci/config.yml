@@ -1,8 +1,5 @@
 version: 2
 jobs:
-  machine:
-    environment:
-      USER_ID: ${USER1}
   build:
     working_directory: /temp
     docker:
@@ -10,7 +7,6 @@ jobs:
     environment:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
-      # USER_ID: ${USER1}
       STEPS: "ssh $USER_ID@178.62.60.163 -y rm -rf /app"
     steps:
       - checkout
@@ -18,8 +14,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet publish -c Release --output ./published
-      # - run: ssh $USER_ID@178.62.60.163 -y rm -rf /app
-      - run: $STEPS
+      - run: ssh -o "StrictHostKeyChecking no" splintor@178.62.60.163 -y rm -rf /app
       - run: scp -r ./published $USER_ID@178.62.60.163:/home/$USER_ID/app 
       - run: ssh ${USER1}@178.62.60.163 sudo systemctl restart dotnet-core-app.service
       - store_artifacts:
