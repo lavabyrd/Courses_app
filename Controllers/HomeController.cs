@@ -24,7 +24,7 @@ namespace Courses_app.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your new contact page.";
 
             return View();
         }
