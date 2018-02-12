@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
+      - run: dotnet clean -c Release
       - run: dotnet publish -c Release --output ./published
       - run: ssh -o "StrictHostKeyChecking no" circle@178.62.60.163 -y rm -rf /app
       - run: scp -i ~/.ssh/id_rsa_deploy -r ./published circle@178.62.60.163:/home/circle/app
