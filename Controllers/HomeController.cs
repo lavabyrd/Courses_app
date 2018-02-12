@@ -17,7 +17,7 @@ namespace Courses_app.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page about wha?.";
+            ViewData["Message"] = "This is the about page.";
 
             return View();
         }
@@ -31,7 +31,7 @@ namespace Courses_app.Controllers
 
         public IActionResult List()
         {
-            ViewData["Message"] = "This is the list page blahhhhhhh";
+            ViewData["Message"] = "This is the list page";
 
             return View();
         }
