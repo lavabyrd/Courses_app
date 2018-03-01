@@ -15,7 +15,7 @@ namespace Courses_app.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult HomeTest()
         {
             ViewData["Message"] = "This is the about page.";
 
