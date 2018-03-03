@@ -8,8 +8,13 @@ using Courses_app.Models;
 
 namespace Courses_app.Controllers
 {
+
+
+
+
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
@@ -24,9 +29,6 @@ namespace Courses_app.Controllers
         {
             ViewData["Message"] = "Course Listings";
 
-            string err = Environment.ExpandEnvironmentVariables("MarkTest");
-            ViewData["blah"] = err;
-
             return View();
         }
 
@@ -37,6 +39,7 @@ namespace Courses_app.Controllers
 
         public IActionResult List()
         {
+            
             ViewData["Message"] = "This is the list page";
 
             return View();
