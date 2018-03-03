@@ -15,9 +15,9 @@ namespace Courses_app.Controllers
             return View();
         }
 
-        public IActionResult HomeTest()
+        public IActionResult CourseList()
         {
-            ViewData["Message"] = "This is the about page.";
+            ViewData["Message"] = "Course Listings";
 
             return View();
         }
