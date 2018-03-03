@@ -24,6 +24,9 @@ namespace Courses_app.Controllers
         {
             ViewData["Message"] = "Course Listings";
 
+            string err = Environment.ExpandEnvironmentVariables("MarkTest");
+            ViewData["blah"] = err;
+
             return View();
         }
 
