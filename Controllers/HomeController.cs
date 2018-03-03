@@ -15,6 +15,11 @@ namespace Courses_app.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult CourseList()
         {
             ViewData["Message"] = "Course Listings";
