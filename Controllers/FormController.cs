@@ -6,6 +6,8 @@ using MongoDB.Bson;
 
 namespace Courses_app.Controllers
 {
+    // This controller looks after Any pages that contain a form or follow on from a form (Thanks pages)
+
     public class FormController : Controller
     {
         [HttpGet]

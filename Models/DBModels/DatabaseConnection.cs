@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
 namespace Courses_app.Models.DBModels
 {
+    // This controls all interaction with the Database through reads and writes. This will not be submitted to Github
     public class DatabaseConnection
     {
         public static List<BsonDocument> DBRead() {

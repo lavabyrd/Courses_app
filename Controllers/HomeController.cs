@@ -5,7 +5,7 @@ using Courses_app.Models.DBModels;
 
 namespace Courses_app.Controllers
 {
-    
+    // This controller looks after Index, About, The main Course List, FAQ Tips and Errors
     public class HomeController : Controller
     {
 

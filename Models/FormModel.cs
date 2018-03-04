@@ -1,5 +1,7 @@
 ﻿namespace Courses_app.Models
 {
+
+    // controls the models used by our forms to build the data submitted to Mongo
     public class AddCourse
     {
         public string CourseName { get; set; }
@@ -11,6 +13,7 @@
         public string Price { get; set; }
         public string Size { get; set; }
     }
+
     public class CourseInfo
     {
         public string CourseName { get; set; }
@@ -21,7 +24,6 @@
         public string Price { get; set; }
         public string Size { get; set; }
     }
-
 
     public class ContactForm
     {
@@ -38,6 +40,7 @@
         public string Email { get; set; }
         public string GetDate { get; set; }
     }
+
     public class SuggestForm
     {
         public string Name { get; set; }
