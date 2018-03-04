@@ -37,13 +37,7 @@ namespace Courses_app.Controllers
             return View();
         }
 
-        public IActionResult List()
-        {
-            
-            ViewData["Message"] = "This is the list page";
 
-            return View();
-        }
 
         public IActionResult FAQ()
         {
