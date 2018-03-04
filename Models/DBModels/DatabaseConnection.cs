@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
 namespace Courses_app.Models.DBModels
@@ -22,11 +23,21 @@ namespace Courses_app.Models.DBModels
             IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
 
             var result = collec.Find(_ => true).ToList();
+            BsonDocument[] list = result.ToArray();
+            Console.WriteLine(list);
+            Console.WriteLine("ehhh");
             foreach (var item in result)
             {
+                
                 var x = item.ToString();
                 fullList.Add(x);
+
             }
+
+            //foreach (var item in fullList)
+            //{
+            //    item.Split(",");
+            //}
             return fullList;
         }
 
