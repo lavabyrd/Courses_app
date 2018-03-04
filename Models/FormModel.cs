@@ -1,4 +1,6 @@
-﻿namespace Courses_app.Models
+﻿using System;
+
+namespace Courses_app.Models
 {
     public class SuggestCourse
     {
@@ -25,5 +27,6 @@
         public string CourseLevel { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string GetDate { get; set; }
     }
 }

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Courses_app.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;             
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Courses_app.Controllers
 {
@@ -49,10 +48,13 @@ namespace Courses_app.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Thanks(ContactForm model)
         {
+            string date = DateTime.Now.ToUniversalTime().ToString();
             BsonDocument docu = new BsonDocument{
                     {"EmailAddress", model.Email},
                     {"Query", model.Query},
-                    {"HeardAbout", model.HearAbout}
+                    {"HeardAbout", model.HearAbout},
+                    {"QueryDate", date}
+
                 };
 
             MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
