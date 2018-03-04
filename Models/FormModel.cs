@@ -7,9 +7,11 @@ namespace Courses_app.Models
         public string CourseName { get; set; }
         public string AuthorName { get; set; }
         public string CourseCode { get; set; }
+        public string DateStarting { get; set; }
         public string Description { get; set; }
         public string Difficulty { get; set; }
         public string Price { get; set; }
+        public string Size { get; set; }
     }
 
     public class ContactForm

@@ -16,12 +16,12 @@
     <input asp-for="CourseName" type="CourseName" class="form-control form-control-sm" id="CourseName" placeholder="An Intro to Film Making" required="true">
   </div>
   <div class="form-group">
-    <label asp-for="AuthorName">Author Name</label>
-    <input asp-for="AuthorName" type="AuthorName" class="form-control form-control-sm" id="AuthorName" placeholder="John Doe" required="true">
+    <label asp-for="CourseCode">Course code</label>
+    <input asp-for="CourseCode" type="CourseCode" class="form-control form-control-sm" id="CourseCode" placeholder="CC 11234" required="true">
   </div>
   <div class="form-group">
-    <label asp-for="CourseCode">Course Code</label>
-    <input asp-for="CourseCode" type="CourseCode" class="form-control form-control-sm" id="CourseCode" placeholder="CC112235" required="true">
+    <label asp-for="Price">Price (In Euros)</label>
+    <input asp-for="Price" type="Price" class="form-control form-control-sm" id="Price" placeholder="75" required="true">
   </div>
   <div class="form-group">
     <label asp-for="Description">What's the course about?</label>
@@ -34,6 +34,14 @@
       <option>Intermediate</option>
       <option>Advanced</option>
     </select>
+  </div>
+  <div class="form-group">
+    <label asp-for="DateStarting">Month Starting</label>
+    <input asp-for="DateStarting" type="DateStarting" class="form-control form-control-sm" id="Price" placeholder="Sept 2018" required="true">
+  </div>
+  <div class="form-group">
+    <label asp-for="Size">Size</label>
+    <input asp-for="Size" type="DateStarting" class="form-control form-control-sm" id="Size" placeholder="15" required="true">
   </div>
 
     

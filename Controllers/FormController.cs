@@ -35,8 +35,25 @@ namespace Courses_app.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult AddYourCourse(SuggestCourse model)
         {
+            string date = DateTime.Now.ToUniversalTime().ToString();
+            BsonDocument docu = new BsonDocument{
+                {"CourseTitle", model.CourseName},
+                {"Coursecode", model.CourseCode},
+                {"Price", model.Price},
+                {"Dates", model.DateStarting},
+                {"CourseLevel", model.Difficulty},
+                {"courseSize", model.Size},
+                {"CourseDescription", model.Description},
+                {"DateAdded", date},
+            };
 
-            return Content($"Hello {model.CourseName}");
+            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
+            IMongoDatabase database = client.GetDatabase("coursecentral");
+            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
+
+            collec.InsertOne(docu);
+            ViewData["contact"] = model.CourseName;
+            return Content($"{model.CourseName} Added");
         }
 
         [HttpGet]
