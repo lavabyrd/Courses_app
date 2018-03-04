@@ -1,12 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Courses_app.Models;
-using System.Collections.Generic;
-using MongoDB.Bson;
-using MongoDB.Driver;
 using Courses_app.Models.DBModels;
 
 namespace Courses_app.Controllers
@@ -28,16 +22,9 @@ namespace Courses_app.Controllers
         public IActionResult CourseList()
         {
             ViewData["Message"] = "Course Listings";
-
-            //ViewBag.markp = 
-            //ViewData.Keys.ElementAt(0);
-
-
             ViewBag.somet = DatabaseConnection.DBRead();
             return View();
         }
-
-
 
         public IActionResult FAQ()
         {
@@ -48,8 +35,6 @@ namespace Courses_app.Controllers
         {
             return View();
         }
-
-
 
         public IActionResult Error()
         {

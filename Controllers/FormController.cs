@@ -15,7 +15,6 @@ namespace Courses_app.Controllers
             return View();
         }
 
-
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult ThanksSignUp(SignUpForm model)
         {
@@ -28,7 +27,6 @@ namespace Courses_app.Controllers
                 {"Email", model.Email}
             };
             DatabaseConnection.DBUserSignUp(docu);
-
             ViewData["contact"] = "Thanks for signing up for " + model.Course;
                 return View();
         }
