@@ -8,12 +8,6 @@ namespace Courses_app.Models.DBModels
 {
     public class DatabaseConnection
     {
-        public void DBConnect() {
-            MongoClient client = new MongoClient("mongodb://HorseTipsRW:G3n3rat3dP4s5write@ds135039.mlab.com:35039/todompreston");
-            IMongoDatabase database = client.GetDatabase("todompreston");
-            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("TestingClientDB");
-        }
-
         public static List<BsonDocument> DBRead() {
             MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
             IMongoDatabase database = client.GetDatabase("coursecentral");

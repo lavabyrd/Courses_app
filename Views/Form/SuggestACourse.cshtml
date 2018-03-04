@@ -13,7 +13,7 @@
 
 <p>Got Something you'd love to see a course on? Let us know!</p>
 
-<form asp-action="SuggestACourse" asp-controller="Form">
+<form asp-action="ThanksCourse" asp-controller="Form">
   <div class="form-group">
     <label asp-for="Name">Your Name</label>
     <input asp-for="Name" type="Name" class="form-control form-control-sm" id="Name" placeholder="John Doe" required="true">
@@ -24,7 +24,7 @@
   </div>
   <div class="form-group">
     <label asp-for="WhySuggestion">Tell us why?</label>
-    <textarea asp-for="WhySuggestion" class="form-control form-control-sm" id="WhySuggestion" rows="3"></textarea>
+    <textarea asp-for="WhySuggestion" class="form-control form-control-sm" id="WhySuggestion" rows="3" required="true"></textarea>
   </div>
   <div class="form-group">
     <label asp-for="Email">Email Address</label>

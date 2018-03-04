@@ -27,6 +27,7 @@ namespace Courses_app.Controllers
                 {"PhoneNumber", model.Phone},
                 {"Email", model.Email}
             };
+            DatabaseConnection.DBUserSignUp(docu);
 
             ViewData["contact"] = "Thanks for signing up for " + model.Course;
                 return View();
@@ -87,6 +88,7 @@ namespace Courses_app.Controllers
             return View();
         }
 
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult ThanksCourse(SuggestForm model)
         {
             string date = DateTime.Now.ToUniversalTime().ToString();
