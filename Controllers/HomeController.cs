@@ -29,8 +29,6 @@ namespace Courses_app.Controllers
             return View();
         }
 
-
-
         public IActionResult List()
         {
             
@@ -48,6 +46,8 @@ namespace Courses_app.Controllers
         {
             return View();
         }
+
+
 
         public IActionResult Error()
         {

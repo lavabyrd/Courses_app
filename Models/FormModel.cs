@@ -3,9 +3,13 @@
     public class AddCourseFormModel
     {
         public string CourseName { get; set; }
+        public string AuthorName { get; set; }
         public string CourseCode { get; set; }
         public string Description { get; set; }
         public string Difficulty { get; set; }
+        public string Price { get; set; }
+
+
         // needs price and author
     }
 
