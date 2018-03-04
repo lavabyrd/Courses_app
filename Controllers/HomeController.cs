@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Courses_app.Models;
+using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using Courses_app.Models.DBModels;
 
 namespace Courses_app.Controllers
 {
@@ -26,6 +29,8 @@ namespace Courses_app.Controllers
         {
             ViewData["Message"] = "Course Listings";
 
+            ViewBag.markp = DatabaseConnection.DBRead();
+                
             return View();
         }
 

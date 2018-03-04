@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Courses_app.Models.DBModels ;
 using Courses_app.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;             
@@ -65,6 +66,7 @@ namespace Courses_app.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Thanks(ContactForm model)
         {
+            
             string date = DateTime.Now.ToUniversalTime().ToString();
             BsonDocument docu = new BsonDocument{
                     {"EmailAddress", model.Email},
@@ -73,12 +75,8 @@ namespace Courses_app.Controllers
                     {"QueryDate", date}
 
                 };
+            DatabaseConnection.DBWriteContactForm(docu);
 
-            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
-            IMongoDatabase database = client.GetDatabase("coursecentral");
-            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("ContactForm");
-
-            collec.InsertOne(docu);
             ViewData["contact"] = model.Email;
             return View();
         }
