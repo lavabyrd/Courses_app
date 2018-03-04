@@ -18,10 +18,10 @@ namespace Courses_app.Controllers
 
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult SignUp(AddCourseFormModel model)
+        public IActionResult SignUp(SignUpForm model)
         {
 
-            return Content($"Hello {model.CourseName}");
+            return Content($"Hello {model.StudentName}");
         }
 
         [HttpGet]
@@ -32,7 +32,7 @@ namespace Courses_app.Controllers
 
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult AddYourCourse(AddCourseFormModel model)
+        public IActionResult AddYourCourse(SuggestCourse model)
         {
 
             return Content($"Hello {model.CourseName}");

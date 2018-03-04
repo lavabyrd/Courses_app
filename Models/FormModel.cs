@@ -1,6 +1,6 @@
 ﻿namespace Courses_app.Models
 {
-    public class AddCourseFormModel
+    public class SuggestCourse
     {
         public string CourseName { get; set; }
         public string AuthorName { get; set; }
@@ -8,9 +8,6 @@
         public string Description { get; set; }
         public string Difficulty { get; set; }
         public string Price { get; set; }
-
-
-        // needs price and author
     }
 
     public class ContactForm
@@ -20,8 +17,13 @@
         public string HearAbout { get; set; }
     }
 
-    public class FormModel
+    public class SignUpForm
     {
-        public string FirstName { get; set; }
+        public string StudentName { get; set; }
+        public string Course { get; set; }
+        public string Dates { get; set; }
+        public string CourseLevel { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
     }
 }

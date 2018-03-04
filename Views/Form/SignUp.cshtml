@@ -1,4 +1,4 @@
-﻿@model AddCourseFormModel
+﻿@model SignUpForm
 
 
 @{
@@ -6,31 +6,38 @@
 }
 <h2>@ViewData["Title"]</h2>
 
-
 <hr>
 
-
-<form asp-action="AddYourCourse" asp-controller="Form">
+<form asp-action="SignUp" asp-controller="Form">
   <div class="form-group">
-    <label asp-for="CourseName">Course Name</label>
-    <input asp-for="CourseName" type="CourseName" class="form-control form-control-sm" id="CourseName" placeholder="An Intro to Film Making" required="true">
+    <label asp-for="StudentName">Your Name</label>
+    <input asp-for="StudentName" type="StudentName" class="form-control form-control-sm" id="StudentName" placeholder="John Doe" required="true">
   </div>
   <div class="form-group">
-    <label asp-for="CourseCode">Course Code</label>
-    <input asp-for="CourseCode" type="CourseCode" class="form-control form-control-sm" id="CourseCode" placeholder="CC112235" required="true">
+    <label asp-for="Course">Course</label>
+    <input asp-for="Course" type="Course" class="form-control form-control-sm" id="Course" placeholder="CC112235-Intro to FilmMaking" required="true">
   </div>
   <div class="form-group">
-    <label asp-for="Description">What's the course about?</label>
-    <textarea asp-for="Description" class="form-control form-control-sm" id="Description" rows="3" required="true"></textarea>
+    <label asp-for="Dates">Dates - dropdown</label>
+    <textarea asp-for="Dates" class="form-control form-control-sm" id="Dates" rows="3" required="true"></textarea>
   </div>
   <div class="form-group">
-    <label asp-for="Difficulty">What level does it cater to?</label>
-    <select asp-for="Difficulty" class="form-control form-control-sm" id="Difficulty">
+    <label asp-for="CourseLevel">Level</label>
+    <select asp-for="CourseLevel" class="form-control form-control-sm" id="CourseLevel">
       <option>Beginner</option>
       <option>Intermediate</option>
       <option>Advanced</option>
     </select>
   </div>
+  <div class="form-group">
+    <label asp-for="Phone">Contact Phone Number</label>
+    <input asp-for="Phone" type="Phone" class="form-control form-control-sm" id="Phone" placeholder="01-xxx3333">
+  </div>
+  <div class="form-group">
+    <label asp-for="Email">Email Address</label>
+    <input asp-for="Email" type="Email" class="form-control form-control-sm" id="Email" placeholder="Student@email.com">
+  </div>
+    
 
     
     <br>
