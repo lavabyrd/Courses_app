@@ -1,0 +1,57 @@
+﻿@model SuggestForm
+
+
+@{
+    ViewData["Title"] = "Suggest A Course";
+}
+<br>
+<h2>@ViewData["Title"]</h2>
+
+
+<hr>
+<br>
+
+<p>Got Something you'd love to see a course on? Let us know!</p>
+
+<form asp-action="SuggestACourse" asp-controller="Form">
+  <div class="form-group">
+    <label asp-for="Name">Your Name</label>
+    <input asp-for="Name" type="Name" class="form-control form-control-sm" id="Name" placeholder="John Doe" required="true">
+  </div>
+  <div class="form-group">
+    <label asp-for="Suggestion">Course Suggestion</label>
+    <input asp-for="Suggestion" type="Suggestion" class="form-control form-control-sm" id="Suggestion" placeholder="How to be the next Alfred Hitchcock!" required="true">
+  </div>
+  <div class="form-group">
+    <label asp-for="WhySuggestion">Tell us why?</label>
+    <textarea asp-for="WhySuggestion" class="form-control form-control-sm" id="WhySuggestion" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label asp-for="Email">Email Address</label>
+    <input asp-for="Email" type="Email" class="form-control form-control-sm" id="Email" placeholder="Student@email.com">
+  </div>
+
+    
+    <br>
+
+    
+  <div >
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+    
+</form>
+
+
+<br><br>
+
+<address>
+    Course Central<br />
+    1 Camden Street, Dublin, Ireland<br />
+    Phone:
+    +353(1) 811-2233
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:Support@coursecental.com">Support@coursecental.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@coursecental.com">Marketing@coursecental.com</a>
+</address>

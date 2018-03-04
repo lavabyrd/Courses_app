@@ -50,6 +50,15 @@ namespace Courses_app.Models.DBModels
             collec.InsertOne(docu);
         }
 
+        public static void DBCourseSuggestion(BsonDocument docu)
+        {
+            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
+            IMongoDatabase database = client.GetDatabase("coursecentral");
+            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("SuggestedCourses");
+
+            collec.InsertOne(docu);
+        }
+
         public void DBUserlookup() {
             // controls user login
         }

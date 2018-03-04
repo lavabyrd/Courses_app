@@ -16,14 +16,14 @@
 
   <body>
         <h1>Currently Listed courses</h1>
-    <div class="album text-muted">
+    <div class="album text-muted" >
       <div class="container">
 
         <div class="row">
           @foreach (var entry in ViewBag.somet) {
                 <div class="card">
                     <!--<img src="http://wiki.magicc.org/index.php?title=File:MAGICC_logo_small.jpg" alt="100%x280" style="height: 280px; width: 100%; display: block;">-->
-                    <img src="http://wiki.magicc.org/images/c/ce/MAGICC_logo_small.jpg">
+                    <img src="http://wiki.magicc.org/images/c/ce/MAGICC_logo_small.jpg" alt="100%x280" style="height: 280px; width: 100%; display: block;">
                     <p class="card-text">
                 CourseCode: <i>@entry[2]</i><br><hr>
                         <strong>@entry[1]</strong> <i>Price:</i> €@entry[3]

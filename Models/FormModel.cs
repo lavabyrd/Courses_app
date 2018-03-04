@@ -1,6 +1,6 @@
 ﻿namespace Courses_app.Models
 {
-    public class SuggestCourse
+    public class AddCourse
     {
         public string CourseName { get; set; }
         public string AuthorName { get; set; }
@@ -37,5 +37,12 @@
         public string Phone { get; set; }
         public string Email { get; set; }
         public string GetDate { get; set; }
+    }
+    public class SuggestForm
+    {
+        public string Name { get; set; }
+        public string Suggestion { get; set; }
+        public string WhySuggestion { get; set; }
+        public string Email { get; set; }
     }
 }

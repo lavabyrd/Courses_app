@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Courses_app.Models.DBModels ;
 using Courses_app.Models;
-using MongoDB.Bson;
-using MongoDB.Driver;             
+using MongoDB.Bson;           
 
 namespace Courses_app.Controllers
 {
@@ -16,8 +12,6 @@ namespace Courses_app.Controllers
         public IActionResult SignUp()
         {
             ViewBag.somet = DatabaseConnection.DBRead();
-
-
             return View();
         }
 
@@ -46,7 +40,7 @@ namespace Courses_app.Controllers
 
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult AddYourCourse(SuggestCourse model)
+        public IActionResult AddYourCourse(AddCourse model)
         {
             string date = DateTime.Now.ToUniversalTime().ToString();
             BsonDocument docu = new BsonDocument{
@@ -83,8 +77,30 @@ namespace Courses_app.Controllers
                 };
             DatabaseConnection.DBWriteContactForm(docu);
 
-            ViewData["contact"] = "Thanks! We'll get in touch shorty through " + model.Email;
+            ViewData["contact"] = "Thanks! We'll get in touch shortly through " + model.Email;
             return View();
         }
+
+        [HttpGet]
+        public IActionResult SuggestACourse()
+        {
+            return View();
+        }
+
+        public IActionResult ThanksCourse(SuggestForm model)
+        {
+            string date = DateTime.Now.ToUniversalTime().ToString();
+            BsonDocument docu = new BsonDocument{
+                {"Name", model.Name},
+                {"Suggestion", model.Suggestion},
+                {"WhySuggestion", model.WhySuggestion},
+                {"Email", model.Email},
+                {"DateSuggested", date}
+            };
+            DatabaseConnection.DBCourseSuggestion(docu);
+            ViewData["contact"] = "Thanks! We'll get in touch shortly through " + model.Email;
+            return View();
+        }
+
     }
 }
