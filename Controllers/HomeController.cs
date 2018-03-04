@@ -8,10 +8,7 @@ using Courses_app.Models;
 
 namespace Courses_app.Controllers
 {
-
-
-
-
+    
     public class HomeController : Controller
     {
 
@@ -32,15 +29,7 @@ namespace Courses_app.Controllers
             return View();
         }
 
-        public IActionResult AddCourse()
-        {
-            return View();
-        }
 
-        public IActionResult Contact()
-        {
-            return View();
-        }
 
         public IActionResult List()
         {

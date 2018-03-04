@@ -18,5 +18,13 @@
     <Folder Include="Models\DBInteraction\" />
     <Folder Include="Models\" />
     <Folder Include="Models\DBModels\" />
+    <Folder Include="Models\Forms\" />
+    <Folder Include="Views\Form\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Form.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Forms\form.cshtml" />
   </ItemGroup>
 </Project>

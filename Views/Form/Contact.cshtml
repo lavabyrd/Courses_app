@@ -1,22 +1,24 @@
-﻿@{
+﻿@model ContactForm
+
+@{
     ViewData["Title"] = "Contact";
 }
 <h2>@ViewData["Title"]</h2>
 
 
 <hr>
-<form id="contact-form">
+<form asp-action="Thanks" asp-controller="Form">
   <div class="form-group">
-    <label for="emailAddress">Email address</label>
-    <input type="email" class="form-control form-control-sm" id="emailAddress" placeholder="name@example.com" required="true">
+    <label asp-for="Email">Email address</label>
+    <input asp-for="Email" type="email" class="form-control form-control-sm" id="emailAddress" placeholder="name@example.com" required="true">
   </div>
   <div class="form-group">
-    <label for="questionTextArea">Whats your query?</label>
-    <textarea class="form-control form-control-sm" id="questionTextArea" rows="3" required="true"></textarea>
+    <label asp-for="Query">Whats your query?</label>
+    <textarea asp-for="Query" class="form-control form-control-sm" id="questionTextArea" rows="3" required="true"></textarea>
   </div>
   <div class="form-group">
-    <label for="heardAbout">How did you hear about us?</label>
-    <select class="form-control form-control-sm" id="heardAbout">
+    <label asp-for="HearAbout">How did you hear about us?</label>
+    <select asp-for="HearAbout" class="form-control form-control-sm" id="heardAbout">
       <option>Word of Mouth</option>
       <option>Social Media</option>
       <option>News Paper</option>
