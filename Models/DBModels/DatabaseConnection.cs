@@ -52,8 +52,6 @@ namespace Courses_app.Models.DBModels
             collec.InsertOne(docu);
         }
 
-        public void DBUserlookup() {
-            // controls user login
-        }
+
     }
 }
