@@ -1,4 +1,7 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Palanquin');
+
+body {
+    font-family:Palanquin;
     padding-top: 50px;
     padding-bottom: 20px
 }
