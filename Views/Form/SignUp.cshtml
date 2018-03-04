@@ -8,25 +8,19 @@
 
 <hr>
 
-<form asp-action="SignUp" asp-controller="Form">
+<form asp-action="ThanksSignUp" asp-controller="Form">
   <div class="form-group">
     <label asp-for="StudentName">Your Name</label>
     <input asp-for="StudentName" type="StudentName" class="form-control form-control-sm" id="StudentName" placeholder="John Doe" required="true">
   </div>
   <div class="form-group">
     <label asp-for="Course">Course</label>
-    <input asp-for="Course" type="Course" class="form-control form-control-sm" id="Course" placeholder="CC112235-Intro to FilmMaking" required="true">
-  </div>
-  <div class="form-group">
-    <label asp-for="Dates">Dates - dropdown</label>
-    <textarea asp-for="Dates" class="form-control form-control-sm" id="Dates" rows="3" required="true"></textarea>
-  </div>
-  <div class="form-group">
-    <label asp-for="CourseLevel">Level</label>
-    <select asp-for="CourseLevel" class="form-control form-control-sm" id="CourseLevel">
-      <option>Beginner</option>
-      <option>Intermediate</option>
-      <option>Advanced</option>
+    <select asp-for="Course" class="form-control form-control-sm" id="Course">
+            <option></option>
+    @foreach (var entry in ViewBag.somet) {
+
+            <option>@entry[1] - @entry[2]</option>
+      }
     </select>
   </div>
   <div class="form-group">

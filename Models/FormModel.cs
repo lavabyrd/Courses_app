@@ -34,8 +34,6 @@
     {
         public string StudentName { get; set; }
         public string Course { get; set; }
-        public string Dates { get; set; }
-        public string CourseLevel { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string GetDate { get; set; }

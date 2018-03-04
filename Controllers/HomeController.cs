@@ -29,15 +29,11 @@ namespace Courses_app.Controllers
         {
             ViewData["Message"] = "Course Listings";
 
-            //ViewBag.markp = DatabaseConnection.DBRead();
+            //ViewBag.markp = 
             //ViewData.Keys.ElementAt(0);
 
-            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
-            IMongoDatabase database = client.GetDatabase("coursecentral");
-            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
 
-            var result = collec.Find(_ => true).ToList();
-            ViewBag.somet = result;
+            ViewBag.somet = DatabaseConnection.DBRead();
             return View();
         }
 

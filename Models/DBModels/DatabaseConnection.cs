@@ -14,31 +14,13 @@ namespace Courses_app.Models.DBModels
             IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("TestingClientDB");
         }
 
-        public static List<string> DBRead() {
-            List<string> fullList = new List<string>();
-            var coll = new CourseInfo();
-
+        public static List<BsonDocument> DBRead() {
             MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
             IMongoDatabase database = client.GetDatabase("coursecentral");
             IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
 
             var result = collec.Find(_ => true).ToList();
-            BsonDocument[] list = result.ToArray();
-            Console.WriteLine(list);
-            Console.WriteLine("ehhh");
-            foreach (var item in result)
-            {
-                
-                var x = item.ToString();
-                fullList.Add(x);
-
-            }
-
-            //foreach (var item in fullList)
-            //{
-            //    item.Split(",");
-            //}
-            return fullList;
+            return result;
         }
 
         public static void DBWriteContactForm(BsonDocument docu) {
@@ -50,6 +32,22 @@ namespace Courses_app.Models.DBModels
 
             collec.InsertOne(docu);
 
+        }
+        public static void DBWriteNewCourse(BsonDocument docu) {
+            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
+            IMongoDatabase database = client.GetDatabase("coursecentral");
+            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
+
+            collec.InsertOne(docu);
+        }
+
+        public static void DBUserSignUp(BsonDocument docu)
+        {
+            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
+            IMongoDatabase database = client.GetDatabase("coursecentral");
+            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("SignUp");
+
+            collec.InsertOne(docu);
         }
 
         public void DBUserlookup() {

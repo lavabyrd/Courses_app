@@ -15,15 +15,27 @@ namespace Courses_app.Controllers
         [HttpGet]
         public IActionResult SignUp()
         {
+            ViewBag.somet = DatabaseConnection.DBRead();
+
+
             return View();
         }
 
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult SignUp(SignUpForm model)
+        public IActionResult ThanksSignUp(SignUpForm model)
         {
+            string date = DateTime.Now.ToUniversalTime().ToString();
+            BsonDocument docu = new BsonDocument{
+                {"StudentName", model.StudentName},
+                {"Course_selected", model.Course},
+                {"Date Entered", date},
+                {"PhoneNumber", model.Phone},
+                {"Email", model.Email}
+            };
 
-            return Content($"Hello {model.StudentName}");
+            ViewData["contact"] = "Thanks for signing up for " + model.Course;
+                return View();
         }
 
         [HttpGet]
@@ -47,14 +59,8 @@ namespace Courses_app.Controllers
                 {"CourseDescription", model.Description},
                 {"DateAdded", date},
             };
-
-            MongoClient client = new MongoClient("mongodb://CoursesRW:dbpass@ds255768.mlab.com:55768/coursecentral");
-            IMongoDatabase database = client.GetDatabase("coursecentral");
-            IMongoCollection<BsonDocument> collec = database.GetCollection<BsonDocument>("CourseList");
-
-            collec.InsertOne(docu);
-            ViewData["contact"] = model.CourseName;
-            return Content($"{model.CourseName} Added");
+            DatabaseConnection.DBWriteNewCourse(docu);
+            return RedirectToAction("Home", "CourseList");
         }
 
         [HttpGet]
@@ -77,7 +83,7 @@ namespace Courses_app.Controllers
                 };
             DatabaseConnection.DBWriteContactForm(docu);
 
-            ViewData["contact"] = model.Email;
+            ViewData["contact"] = "Thanks! We'll get in touch shorty through " + model.Email;
             return View();
         }
     }
