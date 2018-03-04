@@ -32,6 +32,11 @@ namespace Courses_app.Controllers
             return View();
         }
 
+        public IActionResult AddCourse()
+        {
+            return View();
+        }
+
         public IActionResult Contact()
         {
             return View();

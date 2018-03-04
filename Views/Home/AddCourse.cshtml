@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Add your Course";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<hr>
+<form id="contact-form">
+  <div class="form-group">
+    <label for="CourseName">Course Name</label>
+    <input type="CourseName" class="form-control form-control-sm" id="CourseName" placeholder="An Intro to Film Making" required="true">
+  </div>
+  <div class="form-group">
+    <label for="CourseCode">Course Code</label>
+    <input type="CourseCode" class="form-control form-control-sm" id="CourseCode" placeholder="CC112235" required="true">
+  </div>
+  <div class="form-group">
+    <label for="Description">What's the course about?</label>
+    <textarea class="form-control form-control-sm" id="Description" rows="3" required="true"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="Difficulty">What level does it cater to?</label>
+    <select class="form-control form-control-sm" id="Difficulty">
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+  </div>
+    <br>
+  <div >
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+    
+</form>
+<br><br>
+
+<address>
+    Course Central<br />
+    1 Camden Street, Dublin, Ireland<br />
+    Phone:
+    +353(1) 811-2233
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:Support@coursecental.com">Support@coursecental.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@coursecental.com">Marketing@coursecental.com</a>
+</address>
