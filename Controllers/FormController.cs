@@ -55,7 +55,7 @@ namespace Courses_app.Controllers
                 {"DateAdded", date},
             };
             DatabaseConnection.DBWriteNewCourse(docu);
-            return RedirectToAction("Home", "CourseList");
+            return RedirectToAction("CourseList","Home");
         }
 
         [HttpGet]
